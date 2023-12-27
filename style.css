@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --color-pink: #B52184;
+    --color-blue: #312D64;
+    --color-white: white;
+    --color-gradient-blue: linear-gradient(96deg, #343193 0%, #302C63 99.68%);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Mulish", sans-serif;
+}
+
+main .main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 2rem;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+main #astronaut {
+    width: 28rem;
+}
+
+.main-text {
+    margin-top: 1.7rem;
+}
+
+.main-text h1 {
+    color: var(--color-pink);
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 900;
+}
+
+.main-text p {
+    color: var(--color-blue);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.main .main-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .main-text #arrow {
+    width: 5.8rem;
+    margin: 3.5rem auto;
+}
+
+.main .main-text img {
+    margin-top: 3.5rem;
+}
+
+section {
+    background: var(--color-gradient-blue);
+}
+
+section .cards {
+    background: var(--color-gradient-blue);
+    padding: 5.3rem 3.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+section .cards .card {
+    background: var(--color-white);
+    border-radius: 1.8rem;
+    padding: 2.6rem;
+    max-width: 340px;
+}
+
+section .cards .card h4 {
+    margin-top: 3.3rem;
+    color: var(--color-pink);
+    font-size: 2.8rem;
+    font-weight: 900;
+}
+
+section .cards .card p {
+    margin-top: 1.8rem;
+    color: var(--color-blue);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.contact {
+    background: var(--color-white);
+    padding: 7rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact h4 {
+    color: var(--color-pink);
+    font-size: 3.2rem;
+    font-weight: 900;
+}
+
+form fieldset {
+    border-style: none;
+}
+
+.fieldset-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    max-width: 59rem;
+}
+
+.fieldset-wrapper #name {
+    margin-top: 2rem;
+}
+
+.contact form {
+    flex: 1;
+}
+
+.input-wrapper label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.input-wrapper input, textarea {
+    width: 100%;
+    border-style: none;
+    border-radius: 1.6rem;
+    border: 1.5px solid var(--color-blue);
+    padding: 1.2rem 1.4rem;
+}
+
+.input-wrapper input::placeholder {
+    color: var(--color-blue);
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.contact button {
+    color: var(--color-white);
+    background: var(--color-gradient-blue);
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 1.6rem;
+    border-radius: 1.6rem;
+    border-style: none;
+    margin-top: 2.4rem;
+    width: 15.2rem;
+}
+
+footer {
+    height: 7.4rem;
+    background: var(--color-blue);
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(min-width: 1200px) {
+    main .main {
+        flex-direction: row-reverse;
+        height: 100vh;
+    }
+
+    .main #astronaut {
+        width: 65rem;
+        position: absolute;
+        top: 0;
+        right: 10rem;
+        animation: move-img .5s backwards;
+    }
+
+    .main .main-text {
+        position: absolute;
+        left: 10rem;
+        height: 100%;
+        align-items: start;
+        justify-content: center;
+        top: -6rem;
+        animation: move-text .5s backwards;
+    }
+
+    .main .main-text h1 {
+        font-size: 5.8rem;
+    }
+
+    .main .main-text p {
+        font-size: 3.2rem;
+    }
+
+    .main .arrow {
+        position: absolute;
+        bottom: 3rem;
+    }
+
+    section .cards {
+        flex-direction: row;
+        padding: 6.4rem 12rem;
+    }
+
+    .contact {
+        background-image: url(./assets/stars.svg);
+        background-repeat: no-repeat;
+        background-position: right;
+        align-items: start;
+    }
+
+    .fieldset-wrapper {
+        width: 59rem;
+        margin: 0 25rem;
+    }
+
+    .contact button:hover {
+        cursor: pointer;
+    }
+
+    @keyframes move-text {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    }
+
+    @keyframes move-img {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+    }
+
+}
